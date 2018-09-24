@@ -14,6 +14,16 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+  var hash = "#";
+  var result = "";
+  var space = " ";
+  space = space.repeat(2 * n - 2);
+  for (var i = n; i > 0; i--) {
+    result = space.substring(0, i - 1) + hash + space.substring(0, i - 1);
+    hash = hash + "##";
+    console.log(result);
+  }
+}
 
 module.exports = pyramid;
