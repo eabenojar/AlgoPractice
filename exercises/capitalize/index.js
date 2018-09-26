@@ -16,4 +16,32 @@ function capitalize(str) {
   return newArr.join(" ");
 }
 
+// Reverse Words in a string 'I love coding'
+function reverseWords(str) {
+  var newStr = "";
+  var index = 0;
+  var newArr = [];
+  var result = "";
+  for (var i = 0; i <= str.length; i++) {
+    if (str[i] === " " || i === str.length) {
+      console.log(str[i + 1]);
+      newStr = str.substring(index, i);
+      newArr.push(newStr);
+      index = i + 1;
+    }
+
+    newStr = "";
+  }
+  newArr.forEach((item, i) => {
+    for (var char of item) {
+      newStr = char + newStr;
+    }
+    newArr[i] = newStr;
+  });
+  newArr.forEach(item => {
+    result = result + " " + item;
+  });
+  return result;
+}
+
 module.exports = capitalize;
